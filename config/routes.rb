@@ -1,4 +1,10 @@
 SocialMenuServer::Application.routes.draw do
+  get "restaurants/show"
+
+  get "restaurants/index"
+
+  get "restaurants/edit"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -30,6 +36,9 @@ SocialMenuServer::Application.routes.draw do
   #     resources :comments, :sales
   #     resource :seller
   #   end
+  resources :restaurants do
+    resources :dishes, :tables
+  end
 
   # Sample resource route with more complex sub-resources
   #   resources :products do
