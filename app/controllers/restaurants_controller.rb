@@ -2,8 +2,8 @@ class RestaurantsController < ApplicationController
   def show
     if UUID.validate params[:id]
       resto = Restaurant.find_by_uuid params[:id]
-      if resto 
-        render :json => resto
+      if resto  
+        render :json => resto                  
       else
         render :status => :not_found
       end
@@ -13,6 +13,7 @@ class RestaurantsController < ApplicationController
   end
 
   def index
+    
   end
 
   def edit

@@ -1,14 +1,15 @@
 require 'spec_helper'
 
-describe RestaurantsController do
+describe MenusController do
 
   describe "should return a restaurant json given a valid uuid" do
     before do
       @resto = FactoryGirl.create(:restaurant)
+      @table = FactoryGirl.create(:table, :restaurant => @resto)
     end
     
     it "should return status bad request if the given uuid is not valid" do
-      get 'show', :id => @resto.id
+      get 'show', :id => 1
       assert_response :bad_request
     end
     
@@ -17,22 +18,22 @@ describe RestaurantsController do
       assert_response :not_found
     end
     
-    it "should return a json object if the given uuid is valid and existing" do
+    it "should return the restaurant json object if the given uuid is the one of a restaurant" do
       get 'show', :id => @resto.uuid
-      response.body.should eql @resto.to_json
+      response.body.should eql @resto.to_json 
+      puts response.body
+    end
+    
+    it "should return the restaurant json object if the given uuid is the one of a table with the specific table number" do
+      get 'show', :id => @table.uuid
+      response.body.should eql @table.to_json
+      puts response.body
     end                   
   end
 
   describe "GET 'index'" do
     it "returns http success" do
       get 'index'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'edit'" do
-    it "returns http success" do
-      get 'edit'
       response.should be_success
     end
   end

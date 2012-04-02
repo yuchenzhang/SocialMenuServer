@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :restaurant do
     name "soho Eindhoven"
-    uuid 'c0629780-5bf6-012f-fc5b-58b035fd32cb'
+    uuid UUID.new.generate
     latitude 51.9171680000 
     longitude 4.4934080000 
     association :city, :factory => :city, :name => "Eindhoven"

@@ -1,0 +1,10 @@
+%h1 Menus#index
+%table
+  - Restaurant.all.each do |r|
+    %tr
+      %td= r.name
+      %td
+        %ol
+          - r.tables.each do |t|
+            %li{:style => "float:left"}
+              %img{:src => r.uuid.to_qr, :height => 100, :width => 100}

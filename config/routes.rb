@@ -1,4 +1,8 @@
 SocialMenuServer::Application.routes.draw do
+  get "menus/show"
+
+  get "menus/index"
+
   get "restaurants/show"
 
   get "restaurants/index"
@@ -36,8 +40,11 @@ SocialMenuServer::Application.routes.draw do
   #     resources :comments, :sales
   #     resource :seller
   #   end
-  resources :restaurants do
-    resources :dishes, :tables
+  # resources :restaurants do
+  #     resources :dishes, :tables
+  #   end
+  resources :menus do
+    resources :dishes
   end
 
   # Sample resource route with more complex sub-resources

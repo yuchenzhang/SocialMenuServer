@@ -1,2 +1,7 @@
 %h1 Restaurants#index
-%p Find me in app/views/restaurants/index.html.haml
+%table
+  - Restaurant.all.each do |r|
+    %tr
+      %td= r.name
+      %td
+        %img{:src => r.uuid.to_qr, :height => 100, :width => 100}

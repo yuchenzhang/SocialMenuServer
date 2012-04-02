@@ -61,6 +61,7 @@ GEM
       httpclient (>= 2.2.0.2)
       rack-oauth2 (>= 0.14.4)
       tzinfo
+    google-qr (0.2.1)
     haml (3.1.4)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
@@ -182,6 +183,7 @@ DEPENDENCIES
   coffee-rails (~> 3.1.0)
   factory_girl_rails
   fb_graph
+  google-qr
   haml
   haml-rails
   jquery-rails
