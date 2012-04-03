@@ -16,6 +16,7 @@ gem 'fb_graph'
 gem 'settingslogic'
 gem 'uuid'
 gem 'google-qr'
+gem "barista"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -28,13 +29,16 @@ end
 gem 'jquery-rails'
 
 group :development, :test do
-  gem "barista"
-  gem "rspec-rails", "~> 2.0"
-  gem "factory_girl_rails" 
+  gem 'factory_girl',       '2.0.2'      # 2.0.3 breaks loading factories with a Duplication Error
 end
 
 group :test do
-  gem 'rspec'
+  gem "rspec"
+  gem "rspec-rails"
+  gem "spork", "~> 0.9.0.rc"
+  gem "simplecov",          '>= 0.4.0',  :require => false 
+  gem "database_cleaner"
+  gem "shoulda-matchers"
 end
 
 

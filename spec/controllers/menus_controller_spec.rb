@@ -4,8 +4,8 @@ describe MenusController do
 
   describe "should return a restaurant json given a valid uuid" do
     before do
-      @resto = FactoryGirl.create(:restaurant)
-      @table = FactoryGirl.create(:table, :restaurant => @resto)
+      @resto = create(:restaurant)
+      @table = create(:table, :restaurant => @resto)
     end
     
     it "should return status bad request if the given uuid is not valid" do
