@@ -7,15 +7,14 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first) 
 
 eindhoven,rotterdam,amsterdam,utrecht,denhaag = City.create([{ name: 'Eindhoven' }, { name: 'Rotterdam' }, {name: 'Amsterdam'},{name: 'Utrecht'}, {name: 'Den Haag'}])
-dishes = [
-  ['Thai Chicken', 5.50, 'Kipfilet met groeten en thaise curry - cocossaus'],
-  ['Kon Bon Chicken', 5.50, 'Kipfilet met verse kruiden en cashewnoot in licht prikante saus'],
-  ['King Doo Chicken',5.50, 'Kipfilet in een zoetzure saus met ananas'],
-  ['Thai Beef', 6.50, 'Heerlijke biefstuk met thaise curry - cocossaus'],
-  ['Tokyo Beef',6.50, 'Biefstuk in Japanse sojasaus'],
-  ['Garlic Seafood', 6.00, 'Mix van zeevruchten, groenten in verse knoflooksaus'],
-  ['Tropical Prawn', 6.50, 'Garnalen met ananas, tomaten, uien in fruitige zoetezuresaus'],
-  ['Tjap Tjoy', 4.50, 'Mix van seizongroenten']
+takeawaydishes = [
+  ['Banh Mi', 5.50, 'Vietnamese baguette filled with meat and soy', 'tmp/banhmi.jpg'],
+  ['Saliva Chicken', 5.50, 'Sliced chicken topped with garlic and spicy sauce', 'tmp/saliva_chicken.jpg'],
+  ['Steamed Dumpling',5.50, 'Kipfilet in een zoetzure saus met ananas', 'tmp/steamed_dumpling.jpg'],
+  ['Sliced Beef Omasum', 6.50, 'Sliced beef omasum', 'tmp/sliced_beef_omasum.jpg'],
+  ['Sashimi',6.50, 'Raw salmon wrap served with wasabi', 'tmp/sashimi.jpg'],
+  ['Tum Yum Soup', 6.00, 'Spicy Thai soup with muschroom, shrimp and various vegetables', 'tmp/tumyum_soup.jpg'],
+  ['Tapas', 6.50, 'Spanish seafood tapas', 'tmp/tapas.jpg']
 ]
 
 soho_eindhoven = Restaurant.create(:name => "soho Eindhoven", 
@@ -23,12 +22,14 @@ soho_eindhoven = Restaurant.create(:name => "soho Eindhoven",
 :latitude => 51.436126, :longitude => 5.488164, 
 :city_id => eindhoven.id,
 :address_line_1 => "Foodiesstraat 1",
-:address_line_2 => "1234 AA")
+:address_line_2 => "1234 AA")                                           
 1.upto(11) do |i|
   soho_eindhoven.tables.create!(:number => i,:uuid => UUID.new.generate)
 end
-dishes.each do |d|
-  soho_eindhoven.dishes.create!(:name => d[0],:price => d[1], :description => d[2])
+takeawaydishes.each do |d|
+  dish = Dish::Takeawaydish.create!(:name => d[0],:price => d[1], :description => d[2])
+  dish.add_picture_from_file File.open(File.join Rails.root, d[3])
+  soho_eindhoven.dishes << dish
 end
 soho_utrecht = Restaurant.create(:name => "soho Utrecht",
 :uuid => UUID.new.generate,
@@ -39,8 +40,10 @@ soho_utrecht = Restaurant.create(:name => "soho Utrecht",
 1.upto(11) do |i|
   soho_utrecht.tables.create!(:number => i,:uuid => UUID.new.generate)
 end
-dishes.each do |d|
-  soho_utrecht.dishes.create!(:name => d[0],:price => d[1], :description => d[2])
+takeawaydishes.each do |d|
+  dish = Dish::Takeawaydish.create!(:name => d[0],:price => d[1], :description => d[2])
+  dish.add_picture_from_file File.open(File.join Rails.root, d[3])
+  soho_utrecht.dishes << dish
 end
 soho_rotterdam = Restaurant.create(:name => "soho Rotterdam",
 :uuid => UUID.new.generate,
@@ -51,8 +54,10 @@ soho_rotterdam = Restaurant.create(:name => "soho Rotterdam",
 1.upto(11) do |i|
   soho_rotterdam.tables.create!(:number => i,:uuid => UUID.new.generate)
 end
-dishes.each do |d|
-  soho_rotterdam.dishes.create!(:name => d[0],:price => d[1], :description => d[2])
+takeawaydishes.each do |d|
+  dish = Dish::Takeawaydish.create!(:name => d[0],:price => d[1], :description => d[2])
+  dish.add_picture_from_file File.open(File.join Rails.root, d[3])
+  soho_rotterdam.dishes << dish
 end
 soho_amsterdam = Restaurant.create(:name => "soho Amsterdam",
 :uuid => UUID.new.generate,
@@ -63,8 +68,10 @@ soho_amsterdam = Restaurant.create(:name => "soho Amsterdam",
 1.upto(11) do |i|
   soho_amsterdam.tables.create!(:number => i,:uuid => UUID.new.generate)
 end
-dishes.each do |d|
-  soho_amsterdam.dishes.create!(:name => d[0],:price => d[1], :description => d[2])
+takeawaydishes.each do |d|
+  dish = Dish::Takeawaydish.create!(:name => d[0],:price => d[1], :description => d[2])
+  dish.add_picture_from_file File.open(File.join Rails.root, d[3])
+  soho_amsterdam.dishes << dish
 end
 soho_denhaag = Restaurant.create(:name => "soho Den Haag",
 :uuid => UUID.new.generate,
@@ -75,6 +82,8 @@ soho_denhaag = Restaurant.create(:name => "soho Den Haag",
 1.upto(11) do |i|
   soho_denhaag.tables.create!(:number => i,:uuid => UUID.new.generate)
 end
-dishes.each do |d|
-  soho_denhaag.dishes.create!(:name => d[0],:price => d[1], :description => d[2])
+takeawaydishes.each do |d|
+  dish = Dish::Takeawaydish.create!(:name => d[0],:price => d[1], :description => d[2])
+  dish.add_picture_from_file File.open(File.join Rails.root, d[3])
+  soho_denhaag.dishes << dish
 end

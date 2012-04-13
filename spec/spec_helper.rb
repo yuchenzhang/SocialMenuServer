@@ -1,6 +1,7 @@
 
 require 'rubygems'
 require 'spork'
+require "paperclip/matchers"
 
 ENV["RAILS_ENV"] ||= 'test'
 
@@ -52,6 +53,9 @@ Spork.prefork do
     config.after(:each) do
       DatabaseCleaner.clean
     end
+    
+    # paperclip
+    config.include Paperclip::Shoulda::Matchers
   end
 
 end

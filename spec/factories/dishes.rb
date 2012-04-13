@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :dish do
     name "MyString"
-    restaurant_id 1
+    association :restaurant, :factory => :restaurant
     description "MyText"
     price 1.5
   end

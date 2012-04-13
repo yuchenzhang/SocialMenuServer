@@ -2,8 +2,8 @@ require "spec_helper"
 
 describe Restaurant do
   before do 
-    resto = create :restaurant
-    @json = JSON.parse resto.to_json
+    @resto = create :restaurant
+    @json = JSON.parse @m resto.to_json
   end
   it { should belong_to(:city) }
   it { should have_many(:dishes) }
@@ -30,6 +30,12 @@ describe Restaurant do
     it "should include the array of dishes" do
       @json.has_key?('dishes').should be_true
       assert @json['dishes'].is_a? Array
+    end
+  end
+  
+  describe "add_picture_from_file" do
+    it "should add a RestaurantPicture instance when called with a file" do
+      expect{@resto.add_picture_from_file(File.open(File.join(Rails.root,"tmp","tapas.jpg")))}.to change{@resto.pictures.count}.by(1)
     end
   end
 end

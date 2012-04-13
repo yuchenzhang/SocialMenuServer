@@ -6,6 +6,7 @@ describe MenusController do
     before do
       @resto = create(:restaurant)
       @table = create(:table, :restaurant => @resto)
+      @dish = create(:dish, :restaurant => @resto)
     end
     
     it "should return status bad request if the given uuid is not valid" do
