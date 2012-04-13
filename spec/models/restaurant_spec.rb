@@ -3,7 +3,7 @@ require "spec_helper"
 describe Restaurant do
   before do 
     @resto = create :restaurant
-    @json = JSON.parse @m resto.to_json
+    @json = JSON.parse @resto.to_json
   end
   it { should belong_to(:city) }
   it { should have_many(:dishes) }
