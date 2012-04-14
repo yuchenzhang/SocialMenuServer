@@ -6,7 +6,7 @@ child :pictures do
   attribute :url
 end
 child :dishes do
-  attributes :name
+  attributes :name, :description, :price
   child :pictures do
     attribute :url
   end

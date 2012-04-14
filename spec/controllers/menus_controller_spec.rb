@@ -43,9 +43,25 @@ describe MenusController do
         json_response.has_key?('city').should be_true
         assert json_response['city'].is_a? Hash
       end
-      it "should include the array of dishes" do
-        json_response.has_key?('dishes').should be_true
-        assert json_response['dishes'].is_a? Array
+      
+      describe "should include the array of dishes" do
+        it "should contain the dish array" do
+          json_response.has_key?('dishes').should be_true
+          assert json_response['dishes'].is_a? Array
+        end
+        let(:dish_json) do
+          json_response['dishes'].first
+        end
+        it "should contain the dish name, description and price" do
+          dish_json.has_key?('name').should be_true
+          dish_json.has_key?('price').should be_true
+          dish_json.has_key?('description').should be_true
+        end
+        it "should contain the press pictures array with urls" do
+          dish_json.has_key?('dish_pictures').should be_true
+          dish_json['dish_pictures'].is_a? Array
+          dish_json['dish_pictures'].first.has_key?("url").should be_true
+        end
       end
       
     end
