@@ -1,13 +1,4 @@
 SocialMenuServer::Application.routes.draw do
-  get "menus/show"
-
-  get "menus/index"
-
-  get "restaurants/show"
-
-  get "restaurants/index"
-
-  get "restaurants/edit"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

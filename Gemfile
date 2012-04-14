@@ -21,6 +21,8 @@ gem "rspec"
 gem "rspec-rails"
 gem "paperclip", "~> 3.0"
 gem "rmagick"
+gem "rabl"
+gem "yajl-ruby"
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -3,5 +3,9 @@ class DishPicture < ActiveRecord::Base
   validates_attachment :photo, :presence => true,
     :size => { :in => 0..10.megabytes }
   belongs_to :dish
-  validates_presence_of :dish_id, :on => :create, :message => "can't be blank"
+  validates_presence_of :dish_id, :on => :create, :message => "can't be blank" 
+  
+  def url
+    photo.url
+  end
 end

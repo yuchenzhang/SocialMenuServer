@@ -9,8 +9,4 @@ class Restaurant < ActiveRecord::Base
   def add_picture_from_file(file)
     pictures.create!(:photo => file)
   end
-  
-  def to_json(options = nil)
-    super(:except => [:id, :created_at, :updated_at,:uuid, :city_id], :include => {:city => {:only => :name}, :dishes => {:only => [:name, :price, :description]} })
-  end
 end

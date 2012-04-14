@@ -108,6 +108,9 @@ GEM
       rack
       rake (>= 0.8.1)
     polyglot (0.3.3)
+    rabl (0.6.8)
+      activesupport (>= 2.3.14)
+      multi_json (~> 1.0)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -182,6 +185,7 @@ GEM
       multi_json (>= 1.0.2)
     uuid (2.3.5)
       macaddr (~> 1.0)
+    yajl-ruby (1.1.0)
 
 PLATFORMS
   ruby
@@ -200,6 +204,7 @@ DEPENDENCIES
   oa-oauth
   paperclip (~> 3.0)
   passenger
+  rabl
   rails (= 3.2.0)
   rmagick
   rspec
@@ -212,3 +217,4 @@ DEPENDENCIES
   spork (~> 0.9.0.rc)
   uglifier (>= 1.0.3)
   uuid
+  yajl-ruby

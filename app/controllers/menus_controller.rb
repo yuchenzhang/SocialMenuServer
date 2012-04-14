@@ -2,12 +2,12 @@ class MenusController < ApplicationController
   def show
     if UUID.validate params[:id]
       if table = (Table.find_by_uuid params[:id])
-        res = table 
+        @resto = table 
       else
-        res = Restaurant.find_by_uuid params[:id]
+        @resto = Restaurant.find_by_uuid params[:id]
       end
-      if res  
-        render :json => res                  
+      if @resto  
+        render "menus/show"                  
       else
         render :status => :not_found
       end

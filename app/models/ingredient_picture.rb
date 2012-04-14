@@ -3,5 +3,9 @@ class IngredientPicture < ActiveRecord::Base
   validates_attachment :photo, :presence => true, 
     :size => { :in => 0..10.megabytes }
   belongs_to :ingredient
-  validates_presence_of :ingredient_id, :on => :create, :message => "can't be blank"
+  validates_presence_of :ingredient_id, :on => :create, :message => "can't be blank" 
+  
+  def url
+    photo.url
+  end
 end

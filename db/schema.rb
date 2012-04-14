@@ -53,9 +53,16 @@ ActiveRecord::Schema.define(:version => 20120411220627) do
 
   create_table "ingredients", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
+
+  create_table "ingredients_dishes", :id => false, :force => true do |t|
+    t.integer "ingredient_id"
+    t.integer "dish_id"
+  end
+
+  add_index "ingredients_dishes", ["ingredient_id", "dish_id"], :name => "index_ingredients_dishes_on_ingredient_id_and_dish_id"
 
   create_table "restaurant_pictures", :force => true do |t|
     t.integer  "restaurant_id"
