@@ -8,7 +8,7 @@ gem "passenger"
 
 gem 'mysql2'
 gem 'sass'
-# gem 'devise', "2.1.0.rc"
+gem 'devise'
 gem "oa-oauth", :require => "omniauth/oauth"
 gem 'haml'
 gem 'haml-rails'

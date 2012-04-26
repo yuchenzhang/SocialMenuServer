@@ -6,15 +6,34 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first) 
 
+%w(jack rose laura steve).each do |user|
+  User.create!(
+    :name => user,
+    :email => "#{user}@socialmenu.fm",
+    :password => 'password',
+    :password_confirmation => 'password',
+    :avatar => File.open(File.join(Rails.root, "tmp/avatars/#{user}.png"))
+  ).ensure_authentication_token!
+end
+
+
 eindhoven,rotterdam,amsterdam,utrecht,denhaag = City.create([{ name: 'Eindhoven' }, { name: 'Rotterdam' }, {name: 'Amsterdam'},{name: 'Utrecht'}, {name: 'Den Haag'}])
 takeawaydishes = [
-  ['Banh Mi', 5.50, 'Vietnamese baguette filled with meat and soy', 'tmp/banhmi.jpg'],
-  ['Saliva Chicken', 5.50, 'Sliced chicken topped with garlic and spicy sauce', 'tmp/saliva_chicken.jpg'],
-  ['Steamed Dumpling',5.50, 'Kipfilet in een zoetzure saus met ananas', 'tmp/steamed_dumpling.jpg'],
-  ['Sliced Beef Omasum', 6.50, 'Sliced beef omasum', 'tmp/sliced_beef_omasum.jpg'],
-  ['Sashimi',6.50, 'Raw salmon wrap served with wasabi', 'tmp/sashimi.jpg'],
-  ['Tum Yum Soup', 6.00, 'Spicy Thai soup with muschroom, shrimp and various vegetables', 'tmp/tumyum_soup.jpg'],
-  ['Tapas', 6.50, 'Spanish seafood tapas', 'tmp/tapas.jpg']
+  ['Cucumber', 5.50, 'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .', 'tmp/cucumber.jpg'],
+  ['Saliva Chicken', 5.50, 'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .', 'tmp/saliva_chicken.jpg'],
+  ['Steamed Dumpling',5.50, 'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .', 'tmp/steamed_dumpling.jpg'],
+  ['Sliced Beef Omasum', 6.50, 'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .', 'tmp/sliced_beef_omasum.jpg'],
+  ['Sashimi',6.50, 'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .', 'tmp/sashimi.jpg'],
+  ['Tum Yum Soup', 6.00, 'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .', 'tmp/tumyum_soup.jpg'],
+  ['Tapas', 6.50, 'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .', 'tmp/tapas.jpg'],
+  ['Olive', 1, 'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .','tmp/olive.jpg'],
+  ['Hotpot',10, "less commonly Chinese fondue or steamboat, refers to several East Asian varieties of stew, consisting of a simmering metal pot of stock at the center of the dining table. While the hot pot is kept simmering, ingredients are placed into the pot and are cooked at the table. Typical hot pot dishes include thinly sliced meat, leafy vegetables, mushrooms, wontons, egg dumplings, and seafood. Vegetables, fish and meat should be fresh. The cooked food is usually eaten with a dipping sauce.",'tmp/hotpot.jpg'],
+  ['Lamb',11,"Petite lamb rib chops, with their pearly white \"handles,\" are cut from the ribs just behind the shoulders along the spine. Each rack of ribs, on either side of the spine, will contain seven or eight ribs.The meat is very tender, which makes rib chops perfect for quick, high-heat cooking methods, like searing, roasting or grilling.",'tmp/lamb.jpg'],
+  ['Lamb Steak',12,"Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .",'tmp/lamb_steak.jpg'],
+  ['Oyster',7.5,'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .','tmp/oyster.jpg'],
+  ['Paella',8,'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .','tmp/paella.jpg'],
+  ['Steak',20,'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .','tmp/steak.jpg'],
+  ['Unagi',11,"Grilled unagi is a relatively expensive delicacy in Japan, prized not only for its flavor but also for its legendary stamina-giving properties. It's traditionally eaten during the hottest part of the summer (on the \"Day of the Ox\" on the lunar calendar) to provide strength and vitality for the rest of the year.",'tmp/unagi.jpg']
 ]
 
 soho_eindhoven = Restaurant.create(:name => "soho Eindhoven", 

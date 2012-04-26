@@ -1,13 +1,11 @@
 attributes :name, :latitude, :longitude, :address_line_1, :address_line_2
-child :city do
-  attribute :name
-end
+node :city do |r| r.city.name end 
 child :pictures do
   attribute :url
 end
-child :dishes do
-  attributes :name, :description, :price
-  child :pictures do
+child :dishes => :dishes do
+  attributes :name, :description, :price, :id
+  child :pictures => :pictures do
     attribute :url
   end
 end

@@ -1,4 +1,5 @@
 class MenusController < ApplicationController
+  before_filter :authenticate_user!
   def show
     if UUID.validate params[:id]
       if table = (Table.find_by_uuid params[:id])
@@ -6,6 +7,7 @@ class MenusController < ApplicationController
       else
         @resto = Restaurant.find_by_uuid params[:id]
       end
+      @resto ||= Table.first
       if @resto  
         render "menus/show"                  
       else

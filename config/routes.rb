@@ -1,9 +1,13 @@
 SocialMenuServer::Application.routes.draw do
 
+  devise_for :users
+  resources :menus
+  resources :dishes
+  resource  :orders
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-  # Sample of regular route:
+  # Sample of regular route: 
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
 
@@ -34,9 +38,6 @@ SocialMenuServer::Application.routes.draw do
   # resources :restaurants do
   #     resources :dishes, :tables
   #   end
-  resources :menus do
-    resources :dishes
-  end
 
   # Sample resource route with more complex sub-resources
   #   resources :products do
