@@ -1,9 +1,11 @@
 require 'spec_helper'
 
 describe MenusController do
-
+  include Devise::TestHelpers 
   describe "should return a restaurant json given a valid uuid" do
     before do
+      @user = create :user
+      sign_in @user
       @resto = create(:restaurant)
       @table = create(:table, :restaurant => @resto)
       @dish = create(:dish, :restaurant => @resto)
@@ -41,7 +43,7 @@ describe MenusController do
       end
       it "should include the city hash" do
         json_response.has_key?('city').should be_true
-        assert json_response['city'].is_a? Hash
+        assert json_response['city'].is_a? String
       end
       
       describe "should include the array of dishes" do
@@ -58,9 +60,9 @@ describe MenusController do
           dish_json.has_key?('description').should be_true
         end
         it "should contain the press pictures array with urls" do
-          dish_json.has_key?('dish_pictures').should be_true
-          dish_json['dish_pictures'].is_a? Array
-          dish_json['dish_pictures'].first.has_key?("url").should be_true
+          dish_json.has_key?('pictures').should be_true
+          dish_json['pictures'].is_a? Array
+          dish_json['pictures'].first.has_key?("url").should be_true
         end
       end
       

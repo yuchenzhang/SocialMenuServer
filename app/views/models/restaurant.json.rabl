@@ -4,8 +4,5 @@ child :pictures do
   attribute :url
 end
 child :dishes => :dishes do
-  attributes :name, :description, :price, :id
-  child :pictures => :pictures do
-    attribute :url
-  end
+  extends "models/dish"
 end

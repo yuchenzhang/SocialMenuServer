@@ -40,7 +40,7 @@ end
 
 group :test do
   gem "spork", "~> 0.9.0.rc"
-  gem "simplecov",          '>= 0.4.0',  :require => false 
+  gem "simplecov" 
   gem "database_cleaner"
   gem "shoulda-matchers"
 end

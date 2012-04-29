@@ -1,9 +1,10 @@
-SocialMenuServer::Application.routes.draw do
+SocialMenuServer::Application.routes.draw do           
 
   devise_for :users
   resources :menus
   resources :dishes
-  resource  :orders
+  resources :orders, :only => [:index, :show, :create, :update]
+  match 'restaurant/:resto_id/orders(.:format)' => 'orders#index', :as => :restaurant_orders, :constraints => {:resto_id => /\d+/}
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
