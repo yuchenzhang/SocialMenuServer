@@ -7,7 +7,7 @@ class MenusController < ApplicationController
       else
         @resto = Restaurant.find_by_uuid params[:id]
       end
-      # @resto ||= Table.first
+      @resto ||= Table.first
       if @resto  
         render "menus/show"                  
       else
@@ -20,5 +20,5 @@ class MenusController < ApplicationController
 
   def index
   end
-
+  
 end
