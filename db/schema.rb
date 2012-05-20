@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120426121819) do
+ActiveRecord::Schema.define(:version => 20120510090146) do
 
   create_table "cities", :force => true do |t|
     t.string   "name"
@@ -100,6 +100,19 @@ ActiveRecord::Schema.define(:version => 20120426121819) do
     t.string   "address_line_2"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "reviews", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "dish_id"
+    t.integer  "order_id"
+    t.text     "comment"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
   create_table "tables", :force => true do |t|

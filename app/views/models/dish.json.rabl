@@ -1,4 +1,4 @@
-attributes :name, :price, :id
-child :pictures => :pictures do
-  attribute :url
+attributes :id, :name, :price, :description
+child :reviews => :reviews  do
+  extends "models/review"  
 end

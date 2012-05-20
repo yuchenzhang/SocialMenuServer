@@ -1,9 +1,9 @@
 attributes :id, :status
 child :user => :host do
-  attributes :id, :name
+  extends "models/user"
 end
 child :restaurant do
-  attributes :id, :name
+  extends "models/restaurant"
 end
 child :dishes => :dishes do
   extends 'models/dish'

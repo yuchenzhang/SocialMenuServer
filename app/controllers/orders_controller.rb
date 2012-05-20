@@ -32,6 +32,10 @@ class OrdersController < ApplicationController
       @order = Order.create!(
         :restaurant => Restaurant.find(params[:restaurant_id]), 
         :user => User.find(params[:user_id]))
+      if params[:status]
+        @order.status = params[:status]
+        @order.save!
+      end
       @order.dishes << Dish.find(params[:dishes].map{|d|d['id']})
       render :status => :created
     rescue => e
@@ -40,7 +44,4 @@ class OrdersController < ApplicationController
     end
   end
   
-  def update
-    
-  end
 end
