@@ -1,5 +1,5 @@
 attributes :id, :status
-child :user => :host do
+child :user do
   extends "models/user"
 end
 child :restaurant do
