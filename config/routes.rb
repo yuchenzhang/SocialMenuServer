@@ -6,6 +6,8 @@ SocialMenuServer::Application.routes.draw do
   end
   resources :orders, :only => [:index, :show, :create, :update]
   match 'restaurant/:resto_id/orders(.:format)' => 'orders#index', :as => :restaurant_orders, :constraints => {:resto_id => /\d+/}
+  resource :timeline, :only => [:show]
+  match "/" => redirect("http://socialmenu.fm")
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

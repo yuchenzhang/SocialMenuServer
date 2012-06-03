@@ -37,11 +37,11 @@ takeawaydishes = [
 ]
 
 soho_eindhoven = Restaurant.create(:name => "soho Eindhoven", 
-:uuid => UUID.new.generate, 
-:latitude => 51.436126, :longitude => 5.488164, 
-:city_id => eindhoven.id,
-:address_line_1 => "Foodiesstraat 1",
-:address_line_2 => "1234 AA")                                           
+  :uuid => UUID.new.generate, 
+  :latitude => 51.436126, :longitude => 5.488164, 
+  :city_id => eindhoven.id,
+  :address_line_1 => "Foodiesstraat 1",
+  :address_line_2 => "1234 AA")                                           
 1.upto(11) do |i|
   soho_eindhoven.tables.create!(:number => i,:uuid => UUID.new.generate)
 end
