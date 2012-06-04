@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(:version => 20120510090146) do
 
   create_table "cities", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "dish_pictures", :force => true do |t|
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(:version => 20120510090146) do
     t.integer  "restaurant_id"
     t.text     "description"
     t.float    "price"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.string   "type"
   end
 
@@ -98,8 +98,8 @@ ActiveRecord::Schema.define(:version => 20120510090146) do
     t.integer  "city_id"
     t.string   "address_line_1"
     t.string   "address_line_2"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
   end
 
   create_table "reviews", :force => true do |t|
@@ -119,8 +119,8 @@ ActiveRecord::Schema.define(:version => 20120510090146) do
     t.integer  "restaurant_id"
     t.string   "uuid"
     t.integer  "number"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "users", :force => true do |t|
