@@ -12,24 +12,24 @@
     :email => "#{user}@socialmenu.fm",
     :password => 'password',
     :password_confirmation => 'password',
-    :avatar => File.open(File.join(Rails.root, "images/avatars/#{user}.png"))
+    :avatar => File.open(File.join(Rails.root, "images/avatar/#{user}.png"))
   ).ensure_authentication_token!
 end
 
 
 eindhoven,rotterdam,amsterdam,utrecht,denhaag = City.create([{ name: 'Eindhoven' }, { name: 'Rotterdam' }, {name: 'Amsterdam'},{name: 'Utrecht'}, {name: 'Den Haag'}])
 takeawaydishes = [
-  ['Cucumber', 5.50, 'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .', 'images/dishes/cucumber.jpg'],
-  ['Saliva Chicken', 5.50, 'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .', 'images/dishes/saliva_chicken.jpg'],
-  ['Sliced Beef Omasum', 6.50, 'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .', 'images/dishes/sliced_beef_omasum.jpg'],
-  ['Sashimi',6.50, 'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .', 'images/dishes/sashimi.jpg'],
-  ['Tapas', 6.50, 'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .', 'images/dishes/tapas.jpg'],
-  ['Olive', 1, 'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .','images/dishes/olive.jpg'],
-  ['Lamb',11,"Petite lamb rib chops, with their pearly white \"handles,\" are cut from the ribs just behind the shoulders along the spine. ",'images/dishes/lamb.jpg'],
-  ['Oyster',7.5,'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .','images/dishes/oyster.jpg'],
-  ['Steak',20,'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .','images/dishes/steak.jpg'],
-  ['Unagi',11,"Grilled unagi is a relatively expensive delicacy in Japan, prized not only for its flavor but also for its legendary stamina-giving properties. ",'images/dishes/unagi.jpg'],
-  ['Eggwhite on Asparagus', 12, "Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .", 'images/dishes/eggwhite_on_asparagus.jpg'],
+  ['Cucumber', 5.50, 'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .', 'images/dish/cucumber.jpg'],
+  ['Saliva Chicken', 5.50, 'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .', 'images/dish/saliva_chicken.jpg'],
+  ['Sliced Beef Omasum', 6.50, 'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .', 'images/dish/sliced_beef_omasum.jpg'],
+  ['Sashimi',6.50, 'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .', 'images/dish/sashimi.jpg'],
+  ['Tapas', 6.50, 'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .', 'images/dish/tapas.jpg'],
+  ['Olive', 1, 'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .','images/dish/olive.jpg'],
+  ['Lamb',11,"Petite lamb rib chops, with their pearly white \"handles,\" are cut from the ribs just behind the shoulders along the spine. ",'images/dish/lamb.jpg'],
+  ['Oyster',7.5,'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .','images/dish/oyster.jpg'],
+  ['Steak',20,'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .','images/dish/steak.jpg'],
+  ['Unagi',11,"Grilled unagi is a relatively expensive delicacy in Japan, prized not only for its flavor but also for its legendary stamina-giving properties. ",'images/dish/unagi.jpg'],
+  ['Eggwhite on Asparagus', 12, "Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .", 'images/dish/eggwhite_on_asparagus.jpg'],
   ['Sichuan Food', 16, "Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .", 'images/dishes/sichuan_food.jpg']
   
 ]
