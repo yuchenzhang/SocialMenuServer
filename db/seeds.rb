@@ -30,7 +30,7 @@ takeawaydishes = [
   ['Steak',20,'Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .','images/dish/steak.jpg'],
   ['Unagi',11,"Grilled unagi is a relatively expensive delicacy in Japan, prized not only for its flavor but also for its legendary stamina-giving properties. ",'images/dish/unagi.jpg'],
   ['Eggwhite on Asparagus', 12, "Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .", 'images/dish/eggwhite_on_asparagus.jpg'],
-  ['Sichuan Food', 16, "Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .", 'images/dishes/sichuan_food.jpg']
+  ['Sichuan Food', 16, "Lorem ipsum dolor sit amet, iudicabit intellegebat sea at, sea minim elitr ad, pri ne eligendi adversarium conclusionemque. .", 'images/dish/sichuan_food.jpg']
   
 ]
 
