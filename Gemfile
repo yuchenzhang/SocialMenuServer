@@ -36,8 +36,7 @@ end
 gem 'jquery-rails'
 
 group :development, :test do
-  gem 'factory_girl',       '2.0.2'      # 2.0.3 breaks loading factories with a Duplication Error   
-  gem 'sqlite3'
+  gem 'factory_girl',       '2.0.2'      # 2.0.3 breaks loading factories with a Duplication Error  
 end
 
 group :test do
