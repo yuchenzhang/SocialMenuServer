@@ -7,7 +7,7 @@ gem "passenger"
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # gem 'mysql2'
-gem 'pg'
+gem 'pg', :group => [:production, :development,:test]
 gem 'sass'
 gem 'devise'
 gem "oa-oauth", :require => "omniauth/oauth"
