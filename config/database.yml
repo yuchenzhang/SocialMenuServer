@@ -52,4 +52,12 @@ test:
   database: social_menu_test
   pool: 5
   username: socialmenu
-  host: localhost 
+  host: localhost
+
+production:              
+  adapter: postgresql
+  encoding: unicode
+  database: social_menu_production
+  pool: 5
+  username: socialmenu
+  host: localhost

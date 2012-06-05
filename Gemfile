@@ -1,14 +1,11 @@
 source 'http://rubygems.org'
 
 gem "rails", "3.2.0"
-gem "passenger"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # gem 'mysql2'
-gem 'pg', :group => [:production, :development,:test]
-gem 'sass'
 gem 'devise'
 gem "oa-oauth", :require => "omniauth/oauth"
 gem 'haml'
@@ -24,18 +21,25 @@ gem "paperclip", "~> 3.0"
 gem "rmagick"
 gem "rabl"
 gem "yajl-ruby"
+gem 'jquery-rails'
+gem 'sass'
+
+group :production do
+  gem 'aws-sdk', '~> 1.3.4'
+  gem 'pg'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
+group :assets do  
   gem 'sass-rails', "  ~> 3.2.3"
   gem 'coffee-rails', "~> 3.2.1"
   gem 'uglifier', ">= 1.0.3"
 end 
-
-gem 'jquery-rails'
+                  
 
 group :development, :test do
+  gem "passenger"
   gem 'factory_girl',       '2.0.2'      # 2.0.3 breaks loading factories with a Duplication Error  
 end
 
