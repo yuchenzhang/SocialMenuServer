@@ -4,8 +4,4 @@ class RestaurantPicture < ActiveRecord::Base
     :size => { :in => 0..10.megabytes }
   belongs_to :restaurant
   validates_presence_of :restaurant_id, :on => :create, :message => "can't be blank"
-  
-  def url
-    photo.url
-  end
 end

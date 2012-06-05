@@ -58,7 +58,7 @@ SocialMenuServer::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
   
-  Paperclip::Attachment.default_options.merge!({
+  Paperclip::Attachment.default_options.merge!({ 
     :storage => :s3, 
     :s3_credentials => {
       :access_key_id => 'AKIAISDIVMIFKIDO7HPA',
@@ -66,8 +66,8 @@ SocialMenuServer::Application.configure do
     },
     :s3_permissions => :public_read, #default
     :s3_protocol => 'https',
-    :bucket => 'foodreviewpic'
-    # :url => ':s3_path_url' #default
+    :bucket => 'foodreviewpic',
+    :s3_host_name => 's3-eu-west-1.amazonaws.com'        
     #:s3_metadata
     #:s3_storage_class
   })     
