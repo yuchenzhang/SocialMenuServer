@@ -3,7 +3,7 @@ class CreateRestaurantPictures < ActiveRecord::Migration
     create_table :restaurant_pictures do |t|
       t.integer :restaurant_id
       t.string  :caption
-      t.has_attached_file :photo
+      t.has_attached_file :picture
       t.timestamps
     end
   end

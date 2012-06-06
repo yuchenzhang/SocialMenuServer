@@ -1,5 +1,9 @@
 require 'spec_helper'
 
 describe City do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before do
+    create :city
+  end
+  it { should validate_presence_of :name }
+  it { should validate_uniqueness_of :name}
 end

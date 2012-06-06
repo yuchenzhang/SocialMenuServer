@@ -21,13 +21,14 @@ describe MenusController do
       get 'show', :id => @table.uuid, :format => :json
       assert_response :success
     end
-    it 'should return the json of the restaurant when success' do
+    it 'should return the json of the table number 0 when success' do
       get 'show', :id => @restaurant.uuid, :format => :json
       JSON.parse(response.body).should satisfy do |json|
-        json['id'] == @restaurant.id
-        json['name'] == @restaurant.name
-        json['address_line_1'] == @restaurant.address_line_1
-        json['latitude'] == @restaurant.latitude.to_s
+        json['number'] == 0
+        json['restaurant']['id'] == @restaurant.id
+        json['restaurant']['name'] == @restaurant.name
+        json['restaurant']['address_line_1'] == @restaurant.address_line_1
+        json['restaurant']['latitude'] == @restaurant.latitude.to_s
       end
     end
     it 'should return the json of the table when success' do

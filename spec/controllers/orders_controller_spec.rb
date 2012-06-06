@@ -22,7 +22,7 @@ describe OrdersController do
     before do
       @user = create :user
       create :order, :user => @user, :restaurant => (create :restaurant, :name => "soho1", :uuid => 'xxx')
-      create :order, :user => @user, :restaurant => (create :restaurant, :name => "soho2", :uuid => 'yyy')
+      create :order, :user => @user, :restaurant => (create :restaurant, :name => "soho2", :uuid => 'yyy', :city => City.last)
       sign_in @user
     end
     context "get all orders" do

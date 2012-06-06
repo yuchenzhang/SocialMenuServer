@@ -6,7 +6,7 @@ describe Order do
   it { should have_and_belong_to_many :dishes}
   it { should validate_presence_of :user}
   it { should validate_presence_of :restaurant}
-  it { should_not allow_value('created').for(:status)}
+  it { should_not allow_value('created').for :status}
   it { should_not allow_mass_assignment_of :status}
   
   describe "add status" do

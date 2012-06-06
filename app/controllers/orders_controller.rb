@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
       @order = Order.find params[:id]
       render
     rescue => e
-      render :status => :not_found, :error => e.message
+      render :status => :not_found, :nothing => true
       logger.error e.message
     end
   end
@@ -39,7 +39,7 @@ class OrdersController < ApplicationController
       @order.dishes << Dish.find(params[:dishes].map{|d|d['id']})
       render :status => :created
     rescue => e
-      render :status => :unprocessable_entity, :text => e.message
+      render :status => :unprocessable_entity, :nothing => true
       logger.error e.message
     end
   end

@@ -1,7 +1,3 @@
+@resto = Table.new(:number => 0, :restaurant => @resto) unless @resto.is_a? Table
 object @resto
-if @resto.is_a? Table
-  extends "models/table"
-else
-  extends "models/restaurant"
-end
- 
+extends "models/table" 

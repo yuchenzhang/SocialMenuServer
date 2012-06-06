@@ -6,8 +6,8 @@ class Restaurant < ActiveRecord::Base
   has_many :orders
   
   validates_uniqueness_of :uuid, :on => :create, :message => "has already been taken"
-  
+  validates :city, :presence => true
   def add_picture_from_file(file)
-    pictures.create!(:photo => file)
+    pictures.create!(:picture => file)
   end
 end

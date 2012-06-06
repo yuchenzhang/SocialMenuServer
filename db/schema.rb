@@ -19,17 +19,6 @@ ActiveRecord::Schema.define(:version => 20120510090146) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "dish_pictures", :force => true do |t|
-    t.integer  "dish_id"
-    t.string   "caption"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-  end
-
   create_table "dishes", :force => true do |t|
     t.string   "name"
     t.integer  "restaurant_id"
@@ -47,30 +36,6 @@ ActiveRecord::Schema.define(:version => 20120510090146) do
 
   add_index "dishes_orders", ["order_id", "dish_id"], :name => "index_dishes_orders_on_order_id_and_dish_id"
 
-  create_table "ingredient_pictures", :force => true do |t|
-    t.integer  "ingredient_id"
-    t.string   "caption"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-  end
-
-  create_table "ingredients", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "ingredients_dishes", :id => false, :force => true do |t|
-    t.integer "ingredient_id"
-    t.integer "dish_id"
-  end
-
-  add_index "ingredients_dishes", ["ingredient_id", "dish_id"], :name => "index_ingredients_dishes_on_ingredient_id_and_dish_id"
-
   create_table "orders", :force => true do |t|
     t.string   "status"
     t.integer  "user_id"
@@ -82,12 +47,12 @@ ActiveRecord::Schema.define(:version => 20120510090146) do
   create_table "restaurant_pictures", :force => true do |t|
     t.integer  "restaurant_id"
     t.string   "caption"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
   create_table "restaurants", :force => true do |t|
