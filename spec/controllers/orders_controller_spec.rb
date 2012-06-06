@@ -6,8 +6,7 @@ describe OrdersController do
     it { should route(:get, "/orders.json").to(:controller => :orders, :action => :index, :format => 'json')}
     it { should route(:get, "/restaurant/1/orders.json").to(:controller => :orders, :action => :index, :resto_id => 1, :format => 'json')}
     it { should route(:post,"/orders.json").to(:controller => :orders, :action => :create, :format => 'json')}
-    it { should route(:get, "/orders/1.json").to(:controller => :orders, :action => :show, :id => 1, :format => 'json')}
-    it { should route(:put, "/orders/1.json").to(:controller => :orders, :action => :update, :id => 1, :format => 'json')}
+    it { should route(:get, "/orders/1.json").to(:controller => :orders, :action => :show, :id => 1, :format => 'json')}  
   end
   
   context "without authentication" do

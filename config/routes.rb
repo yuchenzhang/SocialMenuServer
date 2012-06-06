@@ -2,9 +2,9 @@ SocialMenuServer::Application.routes.draw do
   devise_for :users
   resources :menus
   resources :dishes do
-    resources :reviews
+    resources :reviews, :only => [:index, :show, :create, :update]
   end
-  resources :orders, :only => [:index, :show, :create, :update]
+  resources :orders, :only => [:index, :show, :create]
   match 'restaurant/:resto_id/orders(.:format)' => 'orders#index', :as => :restaurant_orders, :constraints => {:resto_id => /\d+/}
   resource :timeline, :only => [:show]
   match "/" => redirect("http://socialmenu.fm")

@@ -1,4 +1,4 @@
 attribute :number => :table_number
-child :restaurant do |t|
+child :restaurant do
   extends "models/restaurant"
 end

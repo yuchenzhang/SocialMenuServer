@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :dish do
-    name "MyString"
+    name "Roasted Duck"
     association :restaurant, :factory => :restaurant
-    description "MyText"
-    price 1.5
+    description "The roast duck is crispy in skin and tender in meat."
+    price 13.5
   end
 end

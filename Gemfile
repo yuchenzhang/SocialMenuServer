@@ -44,7 +44,8 @@ group :development, :test do
 end
 
 group :test do
-  gem "spork", "~> 0.9.0.rc"
+  gem "spork", "~> 1.0rc"
+  gem "spork-rails"
   gem "simplecov" 
   gem "database_cleaner"
   gem "shoulda-matchers"
