@@ -1,0 +1,254 @@
+Baseline notes
+===========
+          
+SocialMenuServer
+
+Version: 1.0
+
+1. Important information
+2. Known problems
+3. Feature
+4. PR Fixes
+5. Code stats
+6. Commits
+
+1. Important information
+-------------------------------------------
+To setup the right environment, run:
+bundle install
+bundle exec rake db:create:all
+bundle exec rake db:migrate
+bundle exec rake db:seed
+
+2. Known problems
+-------------------------------------------
+OrdersController is not fully covered by spec test
+
+3. Features
+-------------------------------------------
+a. User sign in
+b. User scanning QR code for menu
+c. User exploring menu and ordering dishes
+d. User sending orders 
+e. User reviewing dishes
+f. User seeing the reviews timeline
+
+4. PR Fixes
+--------------------------------------------
+ 
+5. Code stats
+---------------------------------------------
++----------------------+-------+-------+---------+---------+-----+-------+
+| Name                 | Lines |   LOC | Classes | Methods | M/C | LOC/M |
++----------------------+-------+-------+---------+---------+-----+-------+
+| Controllers          |   149 |   137 |       6 |      12 |   2 |     9 |
+| Helpers              |    12 |    12 |       0 |       0 |   0 |     0 |
+| Models               |   104 |    92 |      18 |       3 |   0 |    28 |
+| Libraries            |    44 |    31 |       1 |       3 |   3 |     8 |
+| Model specs          |   107 |    94 |       0 |       0 |   0 |     0 |
+| Controller specs     |   267 |   251 |       0 |       0 |   0 |     0 |
++----------------------+-------+-------+---------+---------+-----+-------+
+| Total                |   683 |   617 |      25 |      18 |   0 |    32 |
++----------------------+-------+-------+---------+---------+-----+-------+
+  Code LOC: 272     Test LOC: 345     Code to Test Ratio: 1:1.3
+  
+6. Commits
+--------------------------------------------
+commit 99660a4759b2b7c47c5b0ab2600bed92e2bd5db4
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Wed Jun 6 19:15:14 2012 +0200
+
+    fixed model and controller spec tests, removed unused tests
+
+commit 8e5e59081e6e777f1fadd6e3a700a00820d815cf
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Wed Jun 6 17:53:00 2012 +0200
+
+    fixed the controller spec tests
+
+commit f4d6e083e72d2ccba2aeea2790dc407461ed4558
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Tue Jun 5 18:26:11 2012 +0200
+
+    fixed json child root in rabl which fails the integration
+
+commit 5e7e865d5e21ea63832ac38a03def041b2442e87
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Tue Jun 5 16:41:51 2012 +0200
+
+    fix for the aws hostname issue
+
+commit 53f319bb50a9517723bc7ec79670a9874fda0256
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Tue Jun 5 12:28:26 2012 +0200
+
+    integrated with aws s3, for production mode only
+
+commit e9b9d08f58f560ad47f4319058ead3a1a6e15095
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Mon Jun 4 21:32:45 2012 +0200
+
+    typo in seed
+
+commit 556ed7a1b8933b6981a115ff35b243ef10804cda
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Mon Jun 4 21:29:42 2012 +0200
+
+    make sure the image extension is jpg
+
+commit 7cc8e2fec0d95a54a0e5523c91cd1076a6776ec9
+Merge: 79c193c 56a01a1
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Mon Jun 4 21:06:20 2012 +0200
+
+    Merge branch 'development'
+
+commit 56a01a16b5d375e2f94f1324054ce4de5600569f
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Mon Jun 4 21:06:02 2012 +0200
+
+    added avatar and dish images for seed
+
+commit 79c193c6500fb70adecd49c98c793dbe50b1c798
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Mon Jun 4 15:55:28 2012 +0200
+
+    updated gems"
+
+commit 0674d59ed6aba363233814d4787e564607a1825b
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Mon Jun 4 14:54:20 2012 +0200
+
+    explicitly put pg in all groups"
+
+commit 455a5d747a55d612a1e704353d634d216f7b4be2
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Mon Jun 4 14:50:56 2012 +0200
+
+    removed sqlite
+
+commit 5b192f6f1f09e5a85b448efdffc0ad79042863fc
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Mon Jun 4 14:47:38 2012 +0200
+
+    explicitly put sqlite3 to development group
+
+commit f74c8955425eae46427a351c6568422c63c0b6a7
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Mon Jun 4 14:43:46 2012 +0200
+
+    explicitly put sqlite3 to development group
+
+commit 1b1646713bad7176f0e67e088c2119cf43745875
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Mon Jun 4 14:27:17 2012 +0200
+
+    migrated to postgresql
+
+commit 1cf021a3642b41419fe4a61b7f22892bd7fc6f74
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Sun Jun 3 22:26:59 2012 +0200
+
+    timeline controller, added routing redirect on the root level"
+
+commit 302f1d124b0889d66fb3f69547a8a50c6e4f01ba
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Fri May 25 00:24:00 2012 +0200
+
+    WIP
+
+commit b2be58a31a2cd1ae072f57a98a7086a0b9d0aab3
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Sun May 20 10:59:00 2012 +0200
+
+    added review model
+
+commit d11193a42e01d9ed931ea543858d79b50f0ea03e
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Sun May 6 00:00:13 2012 +0200
+
+    added id to restaurant json
+
+commit ce8aa26717378a908ca86feee6218bea4eb27730
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Fri May 4 11:16:49 2012 +0200
+
+    added order create
+
+commit 3da421a2206eda25a5981b662bee2b1f53313d50
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Tue May 1 03:01:15 2012 +0200
+
+    WIP
+
+commit 7727f3f303193db23e26d52068b784890a40526f
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Mon Apr 30 01:12:41 2012 +0200
+
+    added order model
+
+commit 77b5b116cf8c9829e6938993bf68a1eff5fee7ad
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Thu Apr 26 15:21:57 2012 +0200
+
+    added user and order model with unit test
+
+commit e5f0ad86b78be5f45e3f9f41e4d7f86246ad2cdc
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Sat Apr 14 09:27:12 2012 +0200
+
+    tested more deeply the json structure
+
+commit 83cc85d62924d221ad666c181eb61d142d8910d6
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Sat Apr 14 09:13:46 2012 +0200
+
+    picture urls embedded in json interface, tested
+
+commit 1a3236c81715a4b689c0585d63b87a8244da7b6d
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Fri Apr 13 13:27:38 2012 +0200
+
+    added belongs_to and validate on the owner id of pictures
+
+commit 1b73d44ed791694eb786068a33553153026c3712
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Fri Apr 13 02:13:30 2012 +0200
+
+    added paperclip to manage photos, wrote spec test to cover photo attching to resto, dish and ingredient
+
+commit 0e57bde2386377b317c95423f75cad54988c8d30
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Tue Apr 3 14:39:25 2012 +0200
+
+    json interface including dishes
+
+commit 4bc6c1270f67f0223e371a2a547c8dd1447c252f
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Tue Apr 3 12:55:42 2012 +0200
+
+    added spec tests for models
+
+commit 4fe02f1151a5921f146836f1ba3f4de038ced5ce
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Mon Apr 2 16:11:36 2012 +0200
+
+    WIP
+
+commit 2e0e837171aa7c2fe4714568abb06334016400d0
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Sun Apr 1 11:27:17 2012 +0200
+
+    json interface for resto, spec test
+
+commit 40b3fb89b01e08333b8c918dd8638db933dc61b7
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Wed Mar 28 12:40:33 2012 +0200
+
+    ror application initialized
+
+commit c68a95b8ce0bc5b2c7bb6f78747ff7f663a1ddde
+Author: Yuchen Zhang <yuchenzhang@me.com>
+Date:   Wed Mar 28 11:37:37 2012 +0200
+
+    first commit
